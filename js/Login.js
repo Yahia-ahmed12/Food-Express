@@ -95,7 +95,7 @@ loginSubmit.addEventListener("click", function (e) {
       iconColor: "#ff7b00",
     }).then(() => {
       if (userRole === "owner") {
-        window.location.href = "../html/owner/home.html";
+        window.location.href = "../index.html";
       } else if (userRole === "customer") {
         window.location.href = "dashboard.html";
       } else if (userRole === "driver") {

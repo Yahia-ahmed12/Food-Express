@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
         color: "#fff",
         confirmButtonColor: "#ff7b00",
       }).then(() => {
-        window.location.href = "home.html";
+        window.location.href = "index.html";
       });
     } else {
       allOwners.push({
@@ -116,7 +116,7 @@ document.addEventListener("DOMContentLoaded", () => {
         color: "#fff",
         confirmButtonColor: "#ff7b00",
       }).then(() => {
-        window.location.href = "home.html";
+        window.location.href = "index.html";
       });
     }
   });

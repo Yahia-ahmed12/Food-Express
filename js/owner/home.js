@@ -2,7 +2,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
 
   if (!currentUser || currentUser.role !== "owner") {
-    window.location.href = "../login.html";
+    // 1. تعديل مسار الحماية ليتوجه لصفحة الـ Login الصح من الـ Root
+    window.location.href = "html/login.html";
     return;
   }
 
@@ -18,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const navProfileImg = document.getElementById("navProfileImg");
   if (navProfileImg) {
-    navProfileImg.src = currentUser.image || "../../images/default-avatar.png";
+    navProfileImg.src = currentUser.image || "images/default-avatar.png";
   }
 
   const allShops = JSON.parse(localStorage.getItem("allShops")) || [];
@@ -83,7 +84,7 @@ window.logout = () => {
         background: "#23242a",
         color: "#fff",
       }).then(() => {
-        window.location.href = "../login.html";
+        window.location.href = "html/login.html";
       });
     }
   });

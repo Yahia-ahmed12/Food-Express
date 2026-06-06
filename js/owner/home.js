@@ -84,7 +84,7 @@ window.logout = () => {
         background: "#23242a",
         color: "#fff",
       }).then(() => {
-        window.location.href = "html/Login.html";
+        window.location.href = "html/login.html";
       });
     }
   });

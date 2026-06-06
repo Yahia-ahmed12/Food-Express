@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Shop | Owner Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/owner/add-shop.css">
+</head>
+
+<body>
+
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="d-flex align-items-center mb-4">
+                    <a href="my-shops.html" class="btn btn-outline-light me-3">
+                        <i class="fas fa-arrow-left"></i>
+                    </a>
+                    <div>
+                        <h2 class="fw-bold mb-0">Create Your <span class="text-warning">New Shop</span></h2>
+                        <p class="text-white-50 small mb-0">Fill in the details to launch your business</p>
+                    </div>
+                </div>
+
+                <div class="form-container shadow-lg">
+                    <form id="addShopForm">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label">SHOP NAME</label>
+                                <input type="text" id="shopName" class="form-control" placeholder="Enter shop name"
+                                    required>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label">CATEGORY</label>
+                                <select id="shopCategory" class="form-select" required>
+                                    <option value="" selected disabled>Select category</option>
+                                    <option value="Pharmacy">Pharmacy</option>
+                                    <option value="Restaurant">Restaurant</option>
+                                    <option value="Supermarket">Supermarket</option>
+                                    <option value="Italian">Italian</option>
+                                    <option value="Burgers">Burgers</option>
+                                    <option value="Drinks">Drinks</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label">ESTIMATED DELIVERY TIME</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="far fa-clock"></i></span>
+                                    <input type="text" id="shopTime" class="form-control" placeholder="e.g. 20-30 min"
+                                        required>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label">DELIVERY FEE ($)</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fas fa-motorcycle"></i></span>
+                                    <input type="text" id="shopFee" class="form-control" placeholder="e.g. 5 or Free"
+                                        required>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <label class="form-label text-warning">MINIMUM ORDER PRICE ($)</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="fas fa-dollar-sign"></i></span>
+                                    <input type="number" id="shopMinPrice" class="form-control" placeholder="e.g. 10"
+                                        required>
+                                </div>
+                                <small class="text-white-50">This price will be displayed as the minimum for your
+                                    shop.</small>
+                            </div>
+
+                            <div class="col-md-12">
+                                <label class="form-label">CITY / GOVERNORATE</label>
+                                <select id="shopCity" class="form-select" required>
+                                    <option value="" selected disabled>Select your city</option>
+                                    <option value="Cairo">Cairo</option>
+                                    <option value="Alexandria">Alexandria</option>
+                                    <option value="Assiut">Assiut</option>
+                                    <option value="Sohag">Sohag</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-12">
+                                <label class="form-label">DESCRIPTION</label>
+                                <textarea id="shopDesc" class="form-control" rows="3"
+                                    placeholder="Tell us about your shop..."></textarea>
+                            </div>
+
+                            <div class="col-md-12">
+                                <label class="form-label">DETAILED ADDRESS</label>
+                                <input type="text" id="shopAddress" class="form-control"
+                                    placeholder="Street, Building, Landmark..." required>
+                            </div>
+
+                            <div class="col-md-12">
+                                <label class="form-label">SHOP IMAGE URL</label>
+                                <input type="text" id="shopImg" class="form-control"
+                                    placeholder="https://image-link.com/photo.jpg">
+                            </div>
+
+                            <div class="col-md-12 mt-4 text-end">
+                                <button type="submit" class="btn btn-submit">
+                                    <i class="fas fa-plus-circle me-2"></i>CREATE SHOP
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module" src="../../js/owner/add-shop.js"></script>
+</body>
+
+</html>

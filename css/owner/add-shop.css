@@ -1,0 +1,84 @@
+/* add-offer.css */
+
+/* تأمين الخلفية والخط الأساسي */
+body {
+  background-color: #1a1b20 !important;
+  color: white !important;
+  font-family: "Oswald", sans-serif;
+}
+
+/* تنظيف الـ Inputs وجعلها Dark بالكامل */
+.form-control,
+.form-select {
+  background-color: #1a1b20 !important;
+  border: 1px solid #34353c !important;
+  color: white !important;
+  padding: 12px 15px !important;
+  border-radius: 8px !important;
+}
+
+/* تأثير عند الضغط على الـ Input */
+.form-control:focus,
+.form-select:focus {
+  border-color: #ff7b00 !important;
+  outline: none !important;
+  box-shadow: 0 0 0 0.2rem rgba(255, 123, 0, 0.15) !important;
+  outline: none !important;
+}
+
+/* تنسيق الـ Container الرئيسي */
+.form-container {
+  background: #23242a !important;
+  border-radius: 15px;
+  padding: 40px;
+  border: 1px solid #34353c;
+  margin-top: 20px;
+}
+
+/* تنسيق الأيقونات داخل الـ Input Group */
+.input-group-text {
+  background-color: #1a1b20 !important;
+  border: 1px solid #34353c !important;
+  border-right: none !important;
+  color: #ff7b00 !important;
+}
+
+.input-group .form-control {
+  border-left: none !important;
+}
+
+/* ي */
+.btn-outline-light {
+  border: 1px solid #ffffff !important;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.btn-outline-light:hover {
+  background-color: #ffffff !important;
+  border-color: #ffffff !important;
+  color: #34353c !important;
+}
+
+/* زر النشر */
+.btn-submit {
+  background: linear-gradient(90deg, #ff7b00, #ff9500) !important;
+  color: white !important;
+  border: none !important;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+/* --- تعديل الـ Placeholder --- */
+::placeholder {
+  color: #6c757d !important; /* لون رمادي فاتح واضح */
+  opacity: 1; /* للتأكد إن اللون مش شفاف في Firefox */
+  font-size: 0.9rem;
+}
+
+/* للمتصفحات المختلفة */
+::-webkit-input-placeholder {
+  color: #6c757d !important;
+}
+:-ms-input-placeholder {
+  color: #6c757d !important;
+}

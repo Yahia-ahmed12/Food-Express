@@ -1,0 +1,244 @@
+:root {
+  --primary-color: #d34a00;
+  --primary-hover: #b83f00;
+  --secondary-bg: #23242a;
+  --accent-yellow: #ffc107;
+  --accent-color: #ff7b00;
+  --sidebar-bg: #1a1b20;
+  --text-white: #ffffff;
+  --text-muted: #cccccc;
+  --transition-fast: 0.3s ease-in-out;
+  --shadow-heavy: 0 8px 16px rgba(0, 0, 0, 0.7);
+}
+
+body {
+  background-color: var(--sidebar-bg);
+  background: linear-gradient(135deg, var(--sidebar-bg) 0%, #121215 100%);
+  background-attachment: fixed;
+  color: var(--text-white);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.navbar {
+  background-color: #212529 !important;
+  padding: 15px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#navUserImg {
+  object-fit: cover;
+  border: 2px solid #ff7b00;
+}
+
+#trackingMap {
+  height: 450px;
+  width: 100%;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  z-index: 1;
+}
+
+.modal-content {
+  border-radius: 15px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.btn-logout {
+  color: #ff4d4d;
+  border: 1px solid #ff4d4d;
+  transition: 0.3s;
+}
+
+.btn-logout:hover {
+  background: #ff4d4d;
+  color: white;
+}
+
+.btn-back {
+  background-color: transparent;
+  color: var(--text-white);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 10px 25px;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: var(--transition-fast);
+  font-weight: 500;
+}
+
+.btn-back:hover {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+/* Order Card Design */
+.order-card {
+  background: var(--secondary-bg);
+  border: 1px solid rgba(255, 255, 255, 0.03) !important;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: var(--shadow-heavy);
+}
+
+.order-card:hover {
+  transform: translateY(-5px) !important;
+  border-color: var(--accent-color) !important;
+}
+
+/* Card Sections */
+.order-header-bg {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 15px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.icon-box-id {
+  background: rgba(255, 123, 0, 0.1);
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.status-badge {
+  background: rgba(40, 167, 69, 0.1);
+  color: #28a745;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+/* Items List */
+.items-container-premium {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  padding: 15px;
+  margin: 15px 0;
+}
+
+.item-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px dotted rgba(255, 255, 255, 0.1);
+}
+
+.item-row:last-child {
+  border: none;
+}
+
+.qnt-badge {
+  color: var(--accent-yellow);
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+/* Footer & Button */
+.reorder-btn-premium {
+  background: var(--accent-color);
+  border: none;
+  color: white;
+  padding: 10px;
+  border-radius: 14px;
+  transition: var(--transition-fast);
+}
+
+.reorder-btn-premium:hover {
+  background: var(--primary-hover);
+  box-shadow: 0 5px 15px rgba(255, 123, 0, 0.3);
+}
+
+#trackingMap {
+  z-index: 1;
+}
+
+.leaflet-marker-icon {
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.5));
+}
+
+.btn-delete-history {
+  position: absolute;
+  top: 3px;
+  right: 25px;
+  background: rgba(255, 77, 77, 0.1);
+  color: #ff4d4d;
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 5;
+}
+
+.btn-delete-history .icon {
+  display: inline-block;
+  transition: transform 0.3s ease-in-out;
+}
+
+.order-card:hover .btn-delete-history .icon {
+  transform: translateY(-10px) !important;
+}
+
+.btn-delete-history:hover {
+  background: #ff4d4d;
+  color: white;
+  transform: rotate(90deg);
+}
+.navbar {
+  background-color: #1a1a1a !important;
+  padding: 15px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#navUserImg {
+  object-fit: cover;
+  border: 2px solid #ff7b00;
+}
+
+#trackingMap {
+  height: 450px;
+  width: 100%;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  z-index: 1;
+}
+
+.modal-content {
+  border-radius: 15px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.btn-logout {
+  color: #ff4d4d;
+  border: 1px solid #ff4d4d;
+  transition: 0.3s;
+}
+
+.btn-logout:hover {
+  background: #ff4d4d;
+  color: white;
+}
+.btn-delete-history:hover {
+  background: #ff4d4d !important;
+  color: #121215 !important;
+}
+#reviewText::placeholder {
+  color: rgba(255, 255, 255, 0.6) !important; /* هيخليه أبيض خفيف وواضح */
+  opacity: 1; /* لضمان إن المتصفح ميخفيهوش */
+}

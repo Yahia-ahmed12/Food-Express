@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Shop | Owner Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../../css/owner/update-shop.css">
+</head>
+
+<body style="background-color: #1a1b20; color: white; font-family: 'Oswald', sans-serif;">
+
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="d-flex align-items-center mb-4">
+                    <button onclick="history.back()" class="btn btn-outline-light me-3">
+                        <i class="fas fa-arrow-left"></i>
+                    </button>
+                    <h2 class="mb-0">Update <span class="text-warning">Shop Details</span></h2>
+                </div>
+
+                <div class="form-container shadow-lg"
+                    style="background: #23242a; padding: 30px; border-radius: 15px; border: 1px solid #34353c;">
+                    <form id="updateShopForm">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label text-muted small">SHOP NAME</label>
+                                <input type="text" id="shopName" class="form-control" required>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label text-muted small">CATEGORY</label>
+                                <select id="shopCategory" class="form-select" required>
+                                    <option value="Restaurant">Restaurant</option>
+                                    <option value="Pharmacy">Pharmacy</option>
+                                    <option value="Supermarket">Supermarket</option>
+                                    <option value="Cafe">Cafe</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label text-muted small">CITY</label>
+                                <input type="text" id="shopCity" class="form-control" required>
+                            </div>
+
+                            <div class="col-md-12">
+                                <label class="form-label text-muted small">DESCRIPTION</label>
+                                <textarea id="shopDesc" class="form-control" rows="3"></textarea>
+                            </div>
+
+                            <div class="col-md-12">
+                                <label class="form-label text-muted small">FULL ADDRESS</label>
+                                <input type="text" id="shopAddress" class="form-control" required>
+                            </div>
+
+                            <div class="col-md-12">
+                                <label class="form-label text-muted small">SHOP IMAGE (URL)</label>
+                                <input type="text" id="shopImg" class="form-control">
+                                <div id="imgPreview" class="text-center mt-3">
+                                    <img src="" id="currentPreview" alt="Preview"
+                                        style="max-height: 150px; border-radius: 10px; border: 2px solid #ff7b00;">
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 mt-4">
+                                <button type="submit" class="btn btn-submit w-100 py-3 fw-bold"
+                                    style="background: #ff7b00; border: none; color: white;">
+                                    <i class="fas fa-save me-2"></i>SAVE CHANGES
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module" src="../../js/owner/update-shop.js"></script>
+</body>
+
+</html>

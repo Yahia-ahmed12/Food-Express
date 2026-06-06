@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Owner Dashboard | Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/owner/home.css">
+    <style>
+        /* Navbar Professional Custom Styles */
+        .owner-navbar {
+            background-color: #23242a;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 12px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-profile-img {
+            width: 42px;
+            height: 42px;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 2px solid #ff7b00;
+            transition: 0.3s;
+        }
+
+        .settings-link {
+            width: 42px;
+            height: 42px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            color: #aaa;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+
+        .settings-link:hover {
+            background: rgba(255, 123, 0, 0.1);
+            color: #ff7b00;
+            transform: rotate(45deg);
+        }
+
+        .stat-card {
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.05) !important;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-8px);
+            border-color: #ff7b00 !important;
+            background-color: #2c2d35 !important;
+        }
+
+        .action-card {
+            cursor: pointer;
+            transition: 0.3s;
+            border-radius: 20px !important;
+        }
+    </style>
+</head>
+
+<body style="background-color: #1a1b20; color: white; font-family: 'Oswald', sans-serif;">
+
+    <nav class="owner-navbar mb-5">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center gap-2">
+                <i class="fas fa-chart-pie text-warning fa-2x"></i>
+                <h4 class="mb-0 fw-bold tracking-wider">OWNER<span class="text-warning">HUB</span></h4>
+            </div>
+
+            <div class="d-flex align-items-center gap-3">
+                <div class="settings-link position-relative">
+                    <i class="fas fa-bell"></i>
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                        style="font-size: 0.5rem;">3</span>
+                </div>
+
+                <a href="owner-settings.html" class="settings-link" title="Account Settings">
+                    <i class="fas fa-cog"></i>
+                </a>
+
+                <div class="d-flex align-items-center gap-3 border-start ps-3 border-secondary">
+                    <div class="text-end d-none d-md-block">
+                        <p class="mb-0 small fw-bold text-white" id="navOwnerName">Yahia Admin</p>
+                        <small class="text-success" style="font-size: 0.7rem;"><i class="fas fa-circle me-1"></i>
+                            Online</small>
+                    </div>
+                    <img src="../../images/default-avatar.png" id="navProfileImg" class="nav-profile-img" alt="Profile">
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center mb-5">
+            <div>
+                <h1 class="fw-bold mb-0">Welcome Back, <span id="ownerName" class="text-warning">Yahia</span>! 👋</h1>
+                <p class="text-white-50">Monitoring your business performance and shop status.</p>
+            </div>
+            <button onclick="logout()" class="btn btn-outline-danger px-4 rounded-pill">
+                <i class="fas fa-sign-out-alt me-2"></i> Logout
+            </button>
+        </div>
+
+        <div class="row g-4 mb-5">
+            <div class="col-md-3 col-sm-6">
+                <div class="stat-card shadow-sm p-3 bg-dark rounded-3">
+                    <div class="d-flex align-items-center">
+                        <div class="icon-box bg-dark text-warning p-3 rounded border border-warning shadow-sm">
+                            <i class="fas fa-store fa-lg"></i>
+                        </div>
+                        <div class="ms-3">
+                            <h3 id="totalShops" class="mb-0 fw-bold">0</h3>
+                            <p class="mb-0 text-white-50 small">Total Shops</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="stat-card shadow-sm p-3 bg-dark rounded-3">
+                    <div class="d-flex align-items-center">
+                        <div class="icon-box bg-dark text-success p-3 rounded border border-success shadow-sm">
+                            <i class="fas fa-shopping-basket fa-lg"></i>
+                        </div>
+                        <div class="ms-3">
+                            <h3 id="totalProducts" class="mb-0 fw-bold">0</h3>
+                            <p class="mb-0 text-white-50 small">Total Products</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="stat-card shadow-sm p-3 bg-dark rounded-3">
+                    <div class="d-flex align-items-center">
+                        <div class="icon-box bg-dark text-info p-3 rounded border border-info shadow-sm">
+                            <i class="fas fa-receipt fa-lg"></i>
+                        </div>
+                        <div class="ms-3">
+                            <h3 id="totalOrders" class="mb-0 fw-bold">0</h3>
+                            <p class="mb-0 text-white-50 small">New Orders</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="stat-card shadow-sm p-3 bg-dark rounded-3">
+                    <div class="d-flex align-items-center">
+                        <div class="icon-box bg-dark text-danger p-3 rounded border border-danger shadow-sm">
+                            <i class="fas fa-bullhorn fa-lg"></i>
+                        </div>
+                        <div class="ms-3">
+                            <h3 id="totalOffers" class="mb-0 fw-bold">0</h3>
+                            <p class="mb-0 text-white-50 small">Active Offers</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-4 mb-5">
+            <div class="col-md-6 col-lg-3">
+                <div class="action-card text-center p-4" onclick="location.href='my-shops.html'">
+                    <i class="fas fa-tasks fa-3x mb-3 text-warning"></i>
+                    <h4>Manage My Shops</h4>
+                    <p class="text-white-50 small">Edit your shops and products.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="action-card text-center p-4" onclick="location.href='add-shop.html'">
+                    <i class="fas fa-plus-circle fa-3x mb-3 text-warning"></i>
+                    <h4>Add New Shop</h4>
+                    <p class="text-white-50 small">Expand your reach.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="action-card text-center p-4" onclick="location.href='manage-offers.html'">
+                    <i class="fas fa-edit fa-3x mb-3 text-warning"></i>
+                    <h4>Manage Offers</h4>
+                    <p class="text-white-50 small">View or delete your active ads.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="action-card text-center p-4" onclick="location.href='add-offer.html'">
+                    <i class="fas fa-tags fa-3x mb-3 text-warning"></i>
+                    <h4>Add New Offer</h4>
+                    <p class="text-white-50 small">Create new promotions.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module" src="../../js/owner/home.js"></script>
+
+</body>
+
+</html>

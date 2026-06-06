@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/registerAndLogin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Register Customer</title>
+</head>
+
+<body>
+    <div class="centered-page">
+        <div class="box boxCustomer">
+            <div class="form ">
+                <h2 class="registerText">Register Customer</h2>
+                <div class="input inputCustomer">
+                    <div class="inputBox">
+                        <label for="username">Username</label>
+                        <div class="input-wrapper">
+                            <input type="text" id="username" placeholder="Username">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <small class="error" id="usernameError"></small>
+                    </div>
+
+                    <div class="inputBox">
+                        <label for="email">Email</label>
+                        <div class="input-wrapper">
+                            <input type="email" id="email" placeholder="Email" autocomplete="email">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <small class="error" id="emailError"></small>
+                    </div>
+
+                    <div class="inputBox">
+                        <label for="phone">Phone Number</label>
+                        <div class="input-wrapper">
+                            <input type="tel" id="phone" placeholder="Mobile number">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <small class="error" id="phoneError"></small>
+                    </div>
+
+                    <div class="inputBox">
+                        <label for="city">City</label>
+                        <div class="input-wrapper">
+                            <input type="text" id="city" placeholder="City">
+                            <i class="fas fa-city"></i>
+                        </div>
+                        <small class="error" id="cityError"></small>
+                    </div>
+                    <div class="inputBox">
+                        <label for="password">Password</label>
+                        <div class="input-wrapper">
+                            <input type="password" id="password" placeholder="Password">
+                            <i class="fas fa-lock"></i>
+                        </div>
+                        <small class="error" id="passwordError"></small>
+                    </div>
+
+                    <div class="inputBox">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <div class="input-wrapper">
+                            <input type="password" id="confirmPassword" placeholder="Confirm Password">
+                            <i class="fas fa-key"></i>
+                        </div>
+                        <small class="error" id="confirmPasswordError"></small>
+                    </div>
+                    <div class="inputBox">
+                        <input type="submit" id="customerSubmit" value="Sign UP">
+                    </div>
+                </div>
+                <p class="auth-redirect"> Already Registered? <a href="Login.html">Login Here</a></p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="../js/registerCustomer.js"></script>
+
+</body>
+
+</html>

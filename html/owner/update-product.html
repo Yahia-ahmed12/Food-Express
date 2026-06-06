@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Product | Owner Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../css/owner/update-product.css">
+</head>
+
+<body style="background-color: #1a1b20; color: white; font-family: 'Oswald', sans-serif;">
+
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="d-flex align-items-center mb-4">
+                    <button onclick="history.back()" class="btn btn-outline-light me-3">
+                        <i class="fas fa-arrow-left"></i>
+                    </button>
+                    <h2 class="mb-0">Update <span class="text-warning">Product</span></h2>
+                </div>
+
+                <div class="form-container shadow-lg"
+                    style="background: #23242a; padding: 30px; border-radius: 15px; border: 1px solid #34353c;">
+                    <form id="updateProductForm">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label text-muted small">PRODUCT NAME</label>
+                                <input type="text" id="prodName" class="form-control" placeholder="Product name"
+                                    required>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label text-muted small">PRICE ($)</label>
+                                <input type="number" id="prodPrice" class="form-control" placeholder="0.00" step="0.01"
+                                    required>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label text-muted small">CATEGORY</label>
+                                <select id="prodCategory" class="form-select" required>
+                                    <option value="Main Dish">Main Dish</option>
+                                    <option value="Appetizers">Appetizers</option>
+                                    <option value="Drinks">Drinks</option>
+                                    <option value="Desserts">Desserts</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label text-warning small">DISCOUNT PERCENTAGE (%)</label>
+                                <div class="input-group">
+                                    <span class="input-group-text bg-dark text-warning border-secondary">%</span>
+                                    <input type="number" id="prodDiscount" class="form-control" placeholder="0" min="0"
+                                        max="100">
+                                </div>
+                                <small class="text-white-50" style="font-size: 0.7rem;">Current discount for this
+                                    item.</small>
+                            </div>
+
+                            <div class="col-md-12">
+                                <label class="form-label text-muted small">STOCK QUANTITY</label>
+                                <input type="number" id="prodQty" class="form-control" placeholder="Quantity in stock"
+                                    required>
+                            </div>
+
+                            <div class="col-md-12">
+                                <label class="form-label text-muted small">DESCRIPTION</label>
+                                <textarea id="prodDesc" class="form-control" rows="3"
+                                    placeholder="Description..."></textarea>
+                            </div>
+
+                            <div class="col-md-12">
+                                <label class="form-label text-muted small">PRODUCT IMAGE (URL)</label>
+                                <input type="text" id="prodImg" class="form-control" placeholder="Image link...">
+                                <div id="imgPreview" class="text-center mt-3">
+                                    <p class="small text-muted mb-2">Image Preview:</p>
+                                    <img src="" id="currentProdPreview" alt="Preview"
+                                        style="max-height: 150px; border-radius: 10px; border: 2px solid #ff7b00;">
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 mt-4">
+                                <button type="submit" class="btn btn-update w-100 py-3 fw-bold"
+                                    style="background: linear-gradient(90deg, #ff7b00, #ff9500); border: none; color: white; border-radius: 10px;">
+                                    <i class="fas fa-save me-2"></i>SAVE PRODUCT CHANGES
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module" src="../../js/owner/update-product.js"></script>
+</body>
+
+</html>

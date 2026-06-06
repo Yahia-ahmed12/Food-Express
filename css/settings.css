@@ -1,0 +1,24 @@
+body {
+  background: #121215;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.settings-card {
+  background: #1a1b1f;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.form-control:focus,
+.form-select:focus {
+  background: #25262c !important;
+  box-shadow: none;
+  border: 1px solid #ff7b00 !important;
+  color: white;
+}
+
+.form-check-input:checked {
+  background-color: #ff7b00;
+  border-color: #ff7b00;
+}

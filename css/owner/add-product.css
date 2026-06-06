@@ -1,0 +1,62 @@
+/* تنسيق الـ Inputs والـ Select */
+.form-control,
+.form-select {
+  background-color: #1a1b20 !important;
+  border: 1px solid #34353c !important; /* الـ Border اللي كنت بتدور عليه */
+  color: #ffffff !important;
+  padding: 10px 15px;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* تأثير الـ Focus (لما تضغط على الـ Input) */
+.form-control:focus,
+.form-select:focus {
+  border-color: #ff7b00 !important; /* اللون البرتقالي المميز */
+  box-shadow: 0 0 10px rgba(255, 123, 0, 0.2) !important;
+  background-color: #1f2026 !important;
+  outline: none;
+}
+
+/* تنسيق الـ Labels */
+.form-label {
+  letter-spacing: 1px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+/* تنسيق زرار الإضافة */
+.btn-submit {
+  background: linear-gradient(45deg, #ff7b00, #ffaa00) !important;
+  border: none !important;
+  color: white !important;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn-submit:hover {
+  background: linear-gradient(45deg, #e66e00, #ff7b00) !important;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(255, 123, 0, 0.4);
+}
+
+/* زرار الرجوع (Back Button) */
+.btn-outline-light {
+  border: 1px solid #ffffff !important;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.btn-outline-light:hover {
+  background-color: #ffffff !important;
+  border-color: #ffffff !important;
+  color: #34353c !important;
+}
+
+/* تنسيق الـ Placeholder */
+::placeholder {
+  color: #555 !important;
+  font-size: 0.9rem;
+}

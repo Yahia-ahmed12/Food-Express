@@ -1,0 +1,54 @@
+.form-container {
+  background: #23242a;
+  padding: 30px;
+  border-radius: 15px;
+  border: 1px solid #34353c;
+}
+
+.form-control,
+.form-select {
+  background-color: #1a1b20 !important;
+  border: 1px solid #34353c !important;
+  color: white !important;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: #ff7b00 !important;
+  box-shadow: 0 0 8px rgba(255, 123, 0, 0.2) !important;
+  outline: none;
+}
+
+#currentProdPreview {
+  max-height: 180px;
+  border-radius: 12px;
+  border: 2px solid #ff7b00;
+  margin-top: 10px;
+}
+
+.btn-update {
+  background: #ff7b00 !important;
+  color: white !important;
+  border: none;
+  transition: 0.3s;
+}
+
+.btn-update:hover {
+  background: #e66e00 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 123, 0, 0.3);
+}
+
+.btn-outline-light {
+  border: 1px solid #ffffff !important;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.btn-outline-light:hover {
+  background-color: #ffffff !important;
+  border-color: #ffffff !important;
+  color: #34353c !important;
+}

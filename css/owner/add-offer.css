@@ -1,0 +1,145 @@
+/* ضبط الخط والخلفية الأساسية */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Oswald", sans-serif;
+}
+
+body.owner-body {
+  background-color: #1a1b20 !important;
+  color: white !important;
+  min-height: 100vh;
+}
+
+/* حاوية الفورم */
+.form-container {
+  background: #23242a !important;
+  border-radius: 15px;
+  padding: 40px;
+  border: 1px solid #34353c;
+  margin-top: 20px;
+}
+
+/* العناوين */
+.form-label {
+  color: #a0a0a0 !important;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+/* الحقول */
+.form-control,
+.form-select {
+  background-color: #1a1b20 !important;
+  border: 1px solid #34353c !important;
+  color: white !important;
+  padding: 12px 15px;
+  border-radius: 8px !important;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: #ff7b00 !important;
+  box-shadow: 0 0 0 0.25rem rgba(255, 123, 0, 0.1) !important;
+  outline: none !important;
+}
+
+/* زر الرجوع الدائري - إصلاح اللون */
+.btn-outline-light {
+  border: 1px solid #ffffff !important;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.btn-outline-light:hover {
+  background-color: #ffffff !important;
+  border-color: #ffffff !important;
+  color: #34353c !important;
+}
+
+/* الأيقونات داخل الـ Input Group */
+.input-group-text {
+  background-color: #1a1b20 !important;
+  border: 1px solid #34353c !important;
+  border-right: none !important;
+  color: #ff7b00 !important;
+}
+
+/* زر النشر */
+.btn-submit {
+  background: linear-gradient(90deg, #ff7b00, #ff9500) !important;
+  color: white !important;
+  font-weight: bold;
+  border: none !important;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.btn-submit:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(255, 123, 0, 0.4);
+}
+
+.text-muted {
+  color: #6c757d !important;
+}
+/* ده الكود اللي هيتحكم في لون الـ placeholder في كل المتصفحات */
+
+/* للمتصفحات الحديثة (Chrome, Edge, Safari) */
+::placeholder {
+  color: #6c757d !important; /* لون رمادي فاتح واضح */
+  opacity: 1 !important; /* المتصفحات أحياناً بتقلل الشفافية، إحنا بنجبرها تظهر 100% */
+  font-size: 0.9rem;
+}
+
+/* للمتصفحات القديمة (Firefox) */
+::-moz-placeholder {
+  color: #6c757d !important;
+  opacity: 1 !important;
+}
+
+/* لمتصفح Internet Explorer (لو حد لسه بيستخدمه) */
+:-ms-input-placeholder {
+  color: #6c757d !important;
+}
+
+/* تحديد لون خاص لما الزبون يقف على الحقل (Focus) */
+.form-control:focus::placeholder {
+  color: #4b4d56 !important; /* لون أغمق شوية عشان يبان إنك بتكتب */
+}
+/* تنسيق حقل رفع الملفات بالكامل */
+input[type="file"].form-control {
+  padding: 10px !important;
+  cursor: pointer;
+}
+
+/* تنسيق الزرار الصغير اللي جوه الحقل (Choose File) */
+input[type="file"]::file-selector-button {
+  background-color: #ff7b00 !important; /* لون برتقالي */
+  border: none;
+  padding: 5px 15px;
+  border-radius: 5px;
+  margin: 0 0;
+  color: white;
+  font-weight: bold;
+  margin-right: 15px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+/* تأثير عند الوقوف بالماوس على الزرار */
+input[type="file"]::file-selector-button:hover {
+  background-color: #e66e00 !important;
+  transform: scale(1.05);
+}
+
+/* تنسيق النص اللي جنب الزرار (No file chosen) */
+input[type="file"] {
+  color: #a0a0a0 !important; /* لون رمادي فاتح */
+  font-family: "Oswald", sans-serif;
+}

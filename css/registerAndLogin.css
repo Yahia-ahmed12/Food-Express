@@ -1,0 +1,333 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #23242a !important;
+  font-family: "Oswald", sans-serif;
+}
+.centered-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.box {
+  width: 380px;
+  height: 450px;
+  background-color: #1c1c1c;
+  border-radius: 80px;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+.boxCustomer {
+  width: 440px;
+  height: 750px;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+}
+.boxOwner,
+.boxDriver {
+  width: 440px;
+  height: 840px;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+}
+
+.box .form {
+  position: absolute;
+  inset: 3px;
+  background: #23242a;
+  border-radius: 75px;
+  z-index: 20;
+  padding: 20px 30px;
+  display: flex;
+  flex-direction: column;
+}
+.boxCustomer .form {
+  padding: 15px 30px;
+}
+
+.box::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 380px;
+  height: 450px;
+  background: linear-gradient(0deg, transparent, #ff7b00, #ff9500);
+  transform-origin: bottom right;
+  animation: animate 6s linear infinite;
+}
+.boxCustomer::before {
+  width: 440px;
+  height: 730px;
+}
+.boxOwner::before,
+.boxDriver::before {
+  width: 440px;
+  height: 820px;
+}
+.box::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 380px;
+  height: 450px;
+  background: linear-gradient(0deg, transparent, #ff9500, #ff7b00);
+  transform-origin: bottom right;
+  animation: animate 6s linear infinite;
+  animation-delay: -3s;
+}
+.boxCustomer::after {
+  width: 440px;
+  height: 730px;
+}
+.boxOwner::after,
+.boxDriver::after {
+  width: 440px;
+  height: 820px;
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+
+.form h2 {
+  margin-top: 15px;
+  color: #fff;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 20px;
+}
+.form .registerText {
+  margin-top: 15px;
+  color: #fff;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 20px;
+}
+.form .input {
+  width: 100%;
+  background: transparent !important;
+}
+
+.form .input .inputBox {
+  position: relative;
+  margin-top: 12px;
+  width: 100%;
+}
+
+.inputBox .input-wrapper {
+  position: relative;
+}
+
+.inputBox label {
+  display: block;
+  color: #fff;
+  margin-bottom: 5px;
+  font-size: 18px;
+  letter-spacing: 1px;
+  padding-right: 10px;
+}
+
+.inputBox input[type="email"],
+.inputBox input[type="password"],
+.inputBox input[type="text"],
+.inputBox input[type="tel"],
+.inputBox input[type="file"] {
+  width: 100%;
+  height: 40px;
+  background: transparent !important;
+  border: 2px solid #ff7b00;
+  outline: none;
+  color: #fff;
+  padding: 0 45px 0 15px;
+  border-radius: 25px;
+  font-size: 1em;
+  letter-spacing: 0.1em;
+  transition: 0.5s;
+}
+
+.inputBox i {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #ff7b00;
+  font-size: 1.1em;
+  pointer-events: none;
+}
+
+.inputBox input:focus {
+  border-color: #ff7b00;
+  box-shadow:
+    0 0 10px #ff7b00,
+    0 0 5px #ff9500;
+}
+
+.inputBox input[type="submit"] {
+  cursor: pointer;
+  background: #ff7b00;
+  letter-spacing: 1px;
+  border: none;
+  padding: 7px 20px;
+  font-weight: 800;
+  border-radius: 50px;
+  font-size: 1.2em;
+  color: #000000;
+  margin-top: 15px;
+  width: 100%;
+}
+
+.inputBox input[type="submit"]:hover {
+  background: linear-gradient(315deg, #ff9500, #ff7b00);
+  background: linear-gradient(45deg, #ff9500, #ff7b00);
+
+  transition:
+    box-shadow 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.inputBox input[type="submit"]:active {
+  color: rgba(255, 255, 255, 0.521);
+  background: #ff9500;
+}
+
+.form .forgot,
+.form .auth-redirect {
+  color: #fff;
+  margin-top: 20px;
+  font-size: 0.85em;
+  letter-spacing: 0.1em;
+}
+
+.form .forgot a,
+.form .auth-redirect a {
+  color: #ff7b00;
+  text-decoration: none;
+}
+
+.form .forgot a:hover,
+.form .auth-redirect a:hover {
+  text-decoration: underline;
+}
+
+input[type="file"]::file-selector-button {
+  background: #ff7b00 !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: 20px !important;
+  margin-top: 5px;
+  font-weight: bold !important;
+  cursor: pointer !important;
+}
+
+.remmember label input {
+  accent-color: #ff7b00;
+}
+
+/* //////////////// */
+.role-selection {
+  text-align: center;
+  color: white;
+  width: 100%;
+}
+.role-selection h2 {
+  color: #fff;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 40px;
+  font-size: 1.5em;
+}
+.role-options {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.role-card {
+  width: 100%;
+}
+.role-card input[type="radio"] {
+  display: none;
+}
+.role-card label {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #ff7b00;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+  color: white;
+  background: transparent;
+}
+.role-card input[type="radio"]:checked + label {
+  background: #ff7b00;
+  color: black;
+}
+.role-card label:hover {
+  box-shadow: 0 0 5px #ff7b00;
+}
+.role-card i {
+  font-size: 1.5em;
+  margin-left: 10px;
+}
+.role-card span {
+  font-size: 1.2em;
+  font-weight: 600;
+  padding-left: 8px;
+  letter-spacing: 1px;
+}
+.continue-btn {
+  margin-top: 40px;
+  width: 100%;
+}
+.continue-btn button {
+  width: 100%;
+  padding: 10px;
+  background: #ff7b00;
+  border: none;
+  border-radius: 25px;
+  font-size: 1.2em;
+  font-weight: 800;
+  color: #000;
+  cursor: pointer;
+  transition: 0.3s;
+  letter-spacing: 1px;
+}
+.continue-btn button:hover {
+  background: linear-gradient(315deg, #ff9500, #ff7b00);
+  background: linear-gradient(45deg, #ff9500, #ff7b00);
+}
+.role {
+  width: 400px;
+  height: 420px;
+}
+
+.error {
+  display: block;
+  color: #ff4d4d;
+  font-size: 12px;
+  margin-top: 5px;
+}

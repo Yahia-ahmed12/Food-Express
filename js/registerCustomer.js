@@ -1,4 +1,3 @@
-
 let username = document.querySelector("#username");
 let email = document.querySelector("#email");
 let phone = document.querySelector("#phone");
@@ -7,7 +6,6 @@ let password = document.querySelector("#password");
 let confirmPassword = document.querySelector("#confirmPassword");
 let customerSubmit = document.querySelector("#customerSubmit");
 
-
 let usernameError = document.querySelector("#usernameError");
 let emailError = document.querySelector("#emailError");
 let phoneError = document.querySelector("#phoneError");
@@ -15,14 +13,15 @@ let cityError = document.querySelector("#cityError");
 let passwordError = document.querySelector("#passwordError");
 let confirmPasswordError = document.querySelector("#confirmPasswordError");
 
-
-username.addEventListener("input", () => usernameError.textContent = "");
-email.addEventListener("input", () => emailError.textContent = "");
-phone.addEventListener("input", () => phoneError.textContent = "");
-city.addEventListener("input", () => cityError.textContent = "");
-password.addEventListener("input", () => passwordError.textContent = "");
-confirmPassword.addEventListener("input", () => confirmPasswordError.textContent = "");
-
+username.addEventListener("input", () => (usernameError.textContent = ""));
+email.addEventListener("input", () => (emailError.textContent = ""));
+phone.addEventListener("input", () => (phoneError.textContent = ""));
+city.addEventListener("input", () => (cityError.textContent = ""));
+password.addEventListener("input", () => (passwordError.textContent = ""));
+confirmPassword.addEventListener(
+  "input",
+  () => (confirmPasswordError.textContent = ""),
+);
 
 function isValidEmail(email) {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -35,14 +34,13 @@ function isValidEgyptianPhone(phone) {
 }
 
 function isStrongPassword(password) {
- const strongRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#])[A-Za-z\d@$!%*?&#]{8,}$/;
+  const strongRegex =
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#])[A-Za-z\d@$!%*?&#]{8,}$/;
   return strongRegex.test(password);
 }
 
-
-customerSubmit.addEventListener("click", function(e) {
+customerSubmit.addEventListener("click", function (e) {
   e.preventDefault();
-
 
   if (!username.value.trim()) {
     usernameError.textContent = "Please enter your username";
@@ -75,7 +73,6 @@ customerSubmit.addEventListener("click", function(e) {
     return;
   }
 
- 
   if (!isValidEmail(email.value)) {
     emailError.textContent = "Invalid email!";
     email.focus();
@@ -97,26 +94,23 @@ customerSubmit.addEventListener("click", function(e) {
     return;
   }
 
-
   let customers = JSON.parse(localStorage.getItem("customers")) || [];
-  if (customers.some(c => c.email === email.value.trim())) {
+  if (customers.some((c) => c.email === email.value.trim())) {
     emailError.textContent = "Email already registered!";
     email.focus();
     return;
   }
-
 
   let newCustomer = {
     username: username.value.trim(),
     email: email.value.trim(),
     phone: phone.value.trim(),
     city: city.value.trim(),
-    password: password.value
+    password: password.value,
   };
 
   customers.push(newCustomer);
   localStorage.setItem("customers", JSON.stringify(customers));
 
- 
-  window.location = "Login.html";
+  window.location = "login.html";
 });

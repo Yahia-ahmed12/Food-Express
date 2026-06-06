@@ -135,5 +135,5 @@ ownerSubmit.addEventListener("click", function (e) {
 
   owners.push(newOwner);
   localStorage.setItem("owners", JSON.stringify(owners));
-  window.location = "Login.html";
+  window.location = "login.html";
 });

@@ -1,4 +1,3 @@
-
 let username = document.querySelector("#username");
 let email = document.querySelector("#email");
 let phone = document.querySelector("#phone");
@@ -16,15 +15,16 @@ let contractError = document.querySelector("#contractError");
 let passwordError = document.querySelector("#passwordError");
 let confirmPasswordError = document.querySelector("#confirmPasswordError");
 
-
-username.addEventListener("input", () => usernameError.textContent = "");
-email.addEventListener("input", () => emailError.textContent = "");
-phone.addEventListener("input", () => phoneError.textContent = "");
-city.addEventListener("input", () => cityError.textContent = "");
-contract.addEventListener("input", () => contractError.textContent = "");
-password.addEventListener("input", () => passwordError.textContent = "");
-confirmPassword.addEventListener("input", () => confirmPasswordError.textContent = "");
-
+username.addEventListener("input", () => (usernameError.textContent = ""));
+email.addEventListener("input", () => (emailError.textContent = ""));
+phone.addEventListener("input", () => (phoneError.textContent = ""));
+city.addEventListener("input", () => (cityError.textContent = ""));
+contract.addEventListener("input", () => (contractError.textContent = ""));
+password.addEventListener("input", () => (passwordError.textContent = ""));
+confirmPassword.addEventListener(
+  "input",
+  () => (confirmPasswordError.textContent = ""),
+);
 
 function isValidEmail(email) {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -35,14 +35,13 @@ function isValidEgyptianPhone(phone) {
   return phoneRegex.test(phone);
 }
 function isStrongPassword(password) {
-const strongRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#])[A-Za-z\d@$!%*?&#]{8,}$/;
+  const strongRegex =
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#])[A-Za-z\d@$!%*?&#]{8,}$/;
   return strongRegex.test(password);
 }
 
-
-driverSubmit.addEventListener("click", function(e) {
+driverSubmit.addEventListener("click", function (e) {
   e.preventDefault();
-
 
   if (!username.value.trim()) {
     usernameError.textContent = "Please enter your username";
@@ -80,7 +79,6 @@ driverSubmit.addEventListener("click", function(e) {
     return;
   }
 
- 
   if (!isValidEmail(email.value)) {
     emailError.textContent = "Invalid email!";
     email.focus();
@@ -103,13 +101,12 @@ driverSubmit.addEventListener("click", function(e) {
   }
 
   let drivers = JSON.parse(localStorage.getItem("drivers")) || [];
-  if (drivers.some(d => d.email === email.value.trim())) {
+  if (drivers.some((d) => d.email === email.value.trim())) {
     emailError.textContent = "Email already registered!";
     email.focus();
     return;
   }
 
- 
   let newDriver = {
     username: username.value.trim(),
     email: email.value.trim(),
@@ -122,7 +119,5 @@ driverSubmit.addEventListener("click", function(e) {
   drivers.push(newDriver);
   localStorage.setItem("drivers", JSON.stringify(drivers));
 
-
-  window.location = "Login.html";
+  window.location = "login.html";
 });
-

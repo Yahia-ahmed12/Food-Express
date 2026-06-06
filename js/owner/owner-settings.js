@@ -116,7 +116,7 @@ document.addEventListener("DOMContentLoaded", () => {
         color: "#fff",
         confirmButtonColor: "#ff7b00",
       }).then(() => {
-        window.location.href = "index.html";
+        window.location.href = "../../index.html";
       });
     }
   });
